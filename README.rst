@@ -6,13 +6,10 @@ AlienVaultPyEx2
         :alt: Travis Support
         :target: https://travis-ci.org/TheFantasyClub/AlienVaultPyEx2
 
-.. image:: https://img.shields.io/pypi/v/AlienVaultPyEx2.svg
-        :alt: PyPI Support
-        :target: https://pypi.python.org/pypi/AlienVaultPyEx2
-
 .. image:: https://coveralls.io/repos/github/TheFantasyClub/AlienVaultPyEx2/badge.svg?branch=master
         :alt: Coveralls coverage support
         :target: https://coveralls.io/github/TheFantasyClub/AlienVaultPyEx2?branch=master
+
 
 .. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=alert_status
         :alt: Coveralls coverage support
@@ -31,7 +28,7 @@ AlienVaultPyEx2
 AlienVault's hiring exercise
 
 * Free software: MIT license
-* Documentation: (COMING SOON!) https://AlienVaultPyEx2.readthedocs.org.
+* Documentation: https://AlienVaultPyEx2.readthedocs.org.
 
 
 First steps into creating the package and use it
