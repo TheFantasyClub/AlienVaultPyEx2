@@ -10,12 +10,16 @@ python:
 install:
   - "pip install ."
   - "pip install -r requirements.txt"
+  - "pip install python-coveralls"
+  - "pip install coverage"
+  - "pip install nose"
 addons:
   sonarcloud:
     organization: "AlienVaultPyEx2_W"
 # command to run tests
 script:
   - python setup.py test
+  - nosetests --with-coverage
   - sonar-scanner -Dsonar.projectKey=AlienVaultPyEx2_W -Dsonar.sources=. -Dsonar.organization=thefantasyclub-github
 after_success:
   - coveralls
