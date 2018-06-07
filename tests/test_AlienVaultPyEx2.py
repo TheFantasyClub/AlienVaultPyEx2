@@ -26,8 +26,7 @@ class TestDictIssuesComposer(unittest.TestCase):
         pass
 
     def test_creation(self):
-        a = ListComposer(
-                         self.id, self.state, self.title,
+        a = ListComposer(self.id, self.state, self.title,
                          self.repository, self.created_at)
         out_a = json.dumps(a.GetListComposer())
         assert(out_a == '{"id": 38, "state": "open", "title": "Found a bug", '
