@@ -19,6 +19,7 @@ with open(path.join(here, 'HISTORY.rst'), encoding='utf-8') as history_file:
 requirements = [
     # TODO: put package requirements here
     'click',
+    'pygithub',
 ]
 
 test_requirements = [
@@ -32,7 +33,7 @@ setup(
     description="AlienVault's hiring exercise",
     long_description=readme + '\n\n' + history,
     author="TheFantasyClub",
-    author_email='106141+TheFantasyClub@users.noreply.github.com',
+    author_email='https://github.com/TheFantasyClub',
     url='https://github.com/TheFantasyClub/AlienVaultPyEx2',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     entry_points={
@@ -44,7 +45,7 @@ setup(
     install_requires=requirements,
     license="MIT",
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',

@@ -10,6 +10,11 @@ AlienVaultPyEx2
         :alt: Coveralls coverage support
         :target: https://coveralls.io/github/TheFantasyClub/AlienVaultPyEx2?branch=master
 
+.. image:: https://readthedocs.org/projects/alienvaultpyex2/badge/?version=latest
+        :alt: Documentation Status
+        :target: https://alienvaultpyex2.readthedocs.io/en/latest/?badge=latest
+
+## Status
 
 .. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=alert_status
         :alt: Coveralls coverage support
