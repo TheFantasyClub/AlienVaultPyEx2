@@ -14,10 +14,6 @@ AlienVaultPyEx2
         :alt: Coveralls coverage support
         :target: https://coveralls.io/github/TheFantasyClub/AlienVaultPyEx2?branch=master
 
-.. image:: https://sonarcloud.io/images/project_badges/sonarcloud-black.svg
-        :alt: Coveralls coverage support
-        :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W
-
 .. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=alert_status
         :alt: Coveralls coverage support
         :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W
