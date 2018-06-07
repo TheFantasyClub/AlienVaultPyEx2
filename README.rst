@@ -11,6 +11,9 @@ AlienVaultPyEx2
 .. image:: https://coveralls.io/repos/github/TheFantasyClub/AlienVaultPyEx2/badge.svg?branch=master
         :target: https://coveralls.io/github/TheFantasyClub/AlienVaultPyEx2?branch=master
 
+.. image:: https://img.shields.io/github/forks/badges/shields.svg?style=social&label=Fork   :alt: GitHub forks
+        :target: https://github.com/TheFantasyClub/AlienVaultPyEx2
+
 
 
 AlienVault's hiring exercise
