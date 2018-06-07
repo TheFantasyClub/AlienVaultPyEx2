@@ -61,11 +61,56 @@ Features
 
 TODO GLOBAL
 *****************
-* [V] A valid checker is not yet implemented
-* [X] TDD with sonarcloud to ensure effective conversion
+* [X] A valid checker is not yet implemented
+* [ ] TDD with sonarcloud to ensure effective conversion
 
 TODO Specific in `if __name__ == '__main__'`
 **********************************************
-* [X] prompt for user/pass
-* [X] set a python's list pointing to Github's repos.
-* [X] connect to Github
+* [ ] prompt for user/pass
+* [ ] prompt for proxy if needed
+* [ ] set a python's list pointing to Github's repos.
+* [ ] connect to Github
+* [ ] using PyGithub, extract the id, state, title, repository and created at with isoformat Z and create with those data, a dictionary. Insert this dictionary as element into a list.
+* [ ] using the list preiously created, search trough all elements and create a dictionary with the keywords `day` and `ocurrences`
+
+Input
+*****
+["owner1/repository1", "owner2/repository2"]
+
+Restult
+*******
+
+```
+{
+  "issues": [
+    {
+      "id": 38,
+      "state": "open",
+      "title": "Found a bug",
+      "repository": "own1/repo1",
+      "created_at": "2011-04-22T13:33:48Z"
+    },
+    {
+      "id": 23,
+      "state": "open",
+      "title": "Found a bug 2",
+      "repository": "own1/repo1",
+      "created_at": "2011-04-22T18:24:32Z"
+    },
+    {
+      "id": 24,
+      "state": "closed",
+      "title": "Feature request",
+      "repository": "own2/repo2",
+      "created_at": "2011-05-08T09:15:20Z"
+    }
+  ],
+  "top_day": {
+    "day": "2011-04-22",
+    "occurrences": {
+      "own1/repo1": 2,
+      "own2/repo2": 0
+    }
+  }
+}
+```
