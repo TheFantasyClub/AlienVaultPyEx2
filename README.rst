@@ -14,9 +14,21 @@ AlienVaultPyEx2
         :alt: Coveralls coverage support
         :target: https://coveralls.io/github/TheFantasyClub/AlienVaultPyEx2?branch=master
 
-.. image:: https://img.shields.io/github/forks/badges/shields.svg?style=social&label=Fork
-        :alt: GitHub forks
-        :target: https://github.com/TheFantasyClub/AlienVaultPyEx2
+.. image:: https://sonarcloud.io/images/project_badges/sonarcloud-black.svg
+        :alt: Coveralls coverage support
+        :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W
+
+.. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=alert_status
+        :alt: Coveralls coverage support
+        :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W
+
+.. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=code_smells
+        :alt: Coveralls coverage support
+        :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W
+
+.. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=sqale_index
+        :alt: Coveralls coverage support
+        :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W
 
 
 
