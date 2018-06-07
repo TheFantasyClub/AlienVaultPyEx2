@@ -10,6 +10,9 @@ python:
 install:
   - "pip install ."
   - "pip install -r requirements.txt"
+addons:
+  sonarcloud:
+    organization: "AlienVaultPyEx2_W"
 # command to run tests
 script:
   - python setup.py test
