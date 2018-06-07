@@ -12,7 +12,7 @@ import unittest
 import json
 import AlienVaultPyEx2
 
-import AlienVaultPyEx2.DictIssuesComposer.ListComposer as ListComposer
+from AlienVaultPyEx2.DictIssuesComposer import ListComposer
 
 
 class TestDictIssuesComposer(unittest.TestCase):
@@ -26,9 +26,10 @@ class TestDictIssuesComposer(unittest.TestCase):
         pass
 
     def test_creation(self):
-        a = ListComposer(self.id, self.state, self.title, self.title,
+        a = ListComposer(
+                         self.id, self.state, self.title,
                          self.repository, self.created_at)
-        out_a = json.dumps(a)
+        out_a = json.dumps(a.GetListComposer())
         assert(out_a == '{"id": 38, "state": "open", "title": "Found a bug", '
                         + '"repository": "own1/repo1", "created_at":'
                         + ' "2011-04-22T13:33:48Z"}')
