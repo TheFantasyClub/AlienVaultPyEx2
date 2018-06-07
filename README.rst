@@ -13,8 +13,9 @@ AlienVaultPyEx2
 .. image:: https://readthedocs.org/projects/alienvaultpyex2/badge/?version=latest
         :alt: Documentation Status
         :target: https://alienvaultpyex2.readthedocs.io/en/latest/?badge=latest
+.
 
-## Status
+#### <i class="icon-hdd"></i> Sonarcloud Status
 
 .. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=alert_status
         :alt: Coveralls coverage support
