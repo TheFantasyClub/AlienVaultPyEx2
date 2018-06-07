@@ -32,7 +32,7 @@ setup(
     description="AlienVault's hiring exercise",
     long_description=readme + '\n\n' + history,
     author="TheFantasyClub",
-    author_email='tylerdave@tylerdave.com',
+    author_email='106141+TheFantasyClub@users.noreply.github.com',
     url='https://github.com/TheFantasyClub/AlienVaultPyEx2',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     entry_points={
@@ -54,6 +54,7 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
     ],
     test_suite='tests',
     tests_require=test_requirements,
