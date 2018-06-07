@@ -22,6 +22,11 @@ AlienVault's hiring exercise
 First steps into creating the package and use it
 ------------------------------------------------
 
+This is an example package to give to the AlienVault's Hiring Team.
+The code provided could not be safe in industrial environments and this is only a test for hiring purposes.
+
+I'm not responsible in any way if this code eats your homework.
+
 Features
 --------
 
