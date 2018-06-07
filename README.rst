@@ -29,6 +29,10 @@ AlienVaultPyEx2
         :alt: Coveralls coverage support
         :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W
 
+.. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=coverage
+        :alt: Coveralls coverage support
+        :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W
+
 
 
 AlienVault's hiring exercise
