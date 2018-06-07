@@ -2,7 +2,7 @@
 AlienVaultPyEx2
 ===============================
 
-.. image:: https://img.shields.io/travis/TheFantasyClub/AlienVaultPyEx2.svg
+.. image:: https://travis-ci.org/TheFantasyClub/AlienVaultPyEx2.svg?branch=master
         :alt: Travis Support
         :target: https://travis-ci.org/TheFantasyClub/AlienVaultPyEx2
 

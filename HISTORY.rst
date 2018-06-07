@@ -3,4 +3,4 @@
 History
 -------
 
-Pre-release
+Pre-release. Setting up the environment.

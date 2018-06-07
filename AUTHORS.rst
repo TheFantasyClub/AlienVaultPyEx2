@@ -5,7 +5,7 @@ Credits
 Maintainer
 ----------
 
-* TheFantasyClub <tylerdave@tylerdave.com>
+* TheFantasyClub <https://github.com/TheFantasyClub>
 
 Contributors
 ------------
