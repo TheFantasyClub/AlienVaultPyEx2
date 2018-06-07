@@ -21,6 +21,6 @@ script:
   - coverage combine
   - coverage report
   - coverage xml
-  - sonar-scanner -Dsonar.projectKey=AlienVaultPyEx2_W -Dsonar.sources=. -Dsonar.organization=thefantasyclub-github -Dsonar.python.coverage.reportPath=coverage.xml -Dsonar.exclusions=coverage.xml,setup.py,versioneer.py,docs/*,tests/.*,.
+  - sonar-scanner -Dsonar.projectKey=AlienVaultPyEx2_W -Dsonar.sources=. -Dsonar.organization=thefantasyclub-github -Dsonar.python.coverage.reportPath=coverage.xml -Dsonar.exclusions=coverage.xml,setup.py,versioneer.py,docs/*,tests/*,AlienVaultPyEx2/_*
 after_success:
   - coveralls
