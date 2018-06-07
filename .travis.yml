@@ -16,6 +16,6 @@ addons:
 # command to run tests
 script:
   - python setup.py test
-  - sonar-scanner
+  - sonar-scanner -Dsonar.projectKey=AlienVaultPyEx2_W -Dsonar.sources=.
 after_success:
   - coveralls
