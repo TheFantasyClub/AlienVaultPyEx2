@@ -56,4 +56,13 @@ I'm not responsible in any way if this code eats your homework.
 Features
 --------
 
-* TODO
+* Package to read Github issues and process them.
+
+
+## TODO GLOBAL:
+* [V] A valid checker is not yet implemented
+* [X] TDD with sonarcloud to ensure effective conversion
+## TODO Specific in `if __name__ == '__main__'`:
+* [X] prompt for user/pass
+* [X] set a python's list pointing to Github's repos.
+* [X] connect to Github
