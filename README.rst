@@ -3,15 +3,19 @@ AlienVaultPyEx2
 ===============================
 
 .. image:: https://img.shields.io/travis/TheFantasyClub/AlienVaultPyEx2.svg
+        :alt: Travis Support
         :target: https://travis-ci.org/TheFantasyClub/AlienVaultPyEx2
 
 .. image:: https://img.shields.io/pypi/v/AlienVaultPyEx2.svg
+        :alt: PyPI Support
         :target: https://pypi.python.org/pypi/AlienVaultPyEx2
 
 .. image:: https://coveralls.io/repos/github/TheFantasyClub/AlienVaultPyEx2/badge.svg?branch=master
+        :alt: Coveralls coverage support
         :target: https://coveralls.io/github/TheFantasyClub/AlienVaultPyEx2?branch=master
 
-.. image:: https://img.shields.io/github/forks/badges/shields.svg?style=social&label=Fork   :alt: GitHub forks
+.. image:: https://img.shields.io/github/forks/badges/shields.svg?style=social&label=Fork
+        :alt: GitHub forks
         :target: https://github.com/TheFantasyClub/AlienVaultPyEx2
 
 
