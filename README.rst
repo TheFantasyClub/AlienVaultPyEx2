@@ -2,17 +2,19 @@
 AlienVaultPyEx2
 ===============================
 
-.. image:: https://travis-ci.org/TheFantasyClub/AlienVaultPyEx2.svg?branch=master
+|     |     |     |
+| --- | --- | --- |
+| **Travis CI**<br>(Linux Build and Integration Tests) | .. image:: https://travis-ci.org/TheFantasyClub/AlienVaultPyEx2.svg?branch=master
         :alt: Travis Support
-        :target: https://travis-ci.org/TheFantasyClub/AlienVaultPyEx2
-
-.. image:: https://coveralls.io/repos/github/TheFantasyClub/AlienVaultPyEx2/badge.svg?branch=master
+        :target: https://travis-ci.org/TheFantasyClub/AlienVaultPyEx2 |   |
+| **Coveralls coverage support**<br>(Linux Build and Integration Tests) | .. image:: https://coveralls.io/repos/github/TheFantasyClub/AlienVaultPyEx2/badge.svg?branch=master
         :alt: Coveralls coverage support
-        :target: https://coveralls.io/github/TheFantasyClub/AlienVaultPyEx2?branch=master
-
-.. image:: https://readthedocs.org/projects/alienvaultpyex2/badge/?version=latest
+        :target: https://coveralls.io/github/TheFantasyClub/AlienVaultPyEx2?branch=master |   |
+| **Coveralls coverage support**<br>(Linux Build and Integration Tests) | .. image:: https://readthedocs.org/projects/alienvaultpyex2/badge/?version=latest
         :alt: Documentation Status
-        :target: https://alienvaultpyex2.readthedocs.io/en/latest/?badge=latest
+        :target: https://alienvaultpyex2.readthedocs.io/en/latest/?badge=latest |   |
+
+
 
 
 
