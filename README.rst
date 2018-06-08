@@ -2,43 +2,21 @@
 AlienVaultPyEx2
 ===============================
 
-|     |     |     |
-| --- | --- | --- |
-| **Travis CI**<br>(Linux Build and Integration Tests) | .. image:: https://travis-ci.org/TheFantasyClub/AlienVaultPyEx2.svg?branch=master
-        :alt: Travis Support
-        :target: https://travis-ci.org/TheFantasyClub/AlienVaultPyEx2 |   |
-| **Coveralls coverage support**<br>(Linux Build and Integration Tests) | .. image:: https://coveralls.io/repos/github/TheFantasyClub/AlienVaultPyEx2/badge.svg?branch=master
-        :alt: Coveralls coverage support
-        :target: https://coveralls.io/github/TheFantasyClub/AlienVaultPyEx2?branch=master |   |
-| **Coveralls coverage support**<br>(Linux Build and Integration Tests) | .. image:: https://readthedocs.org/projects/alienvaultpyex2/badge/?version=latest
-        :alt: Documentation Status
-        :target: https://alienvaultpyex2.readthedocs.io/en/latest/?badge=latest |   |
-
-
-
-
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Travis CI** (Linux Build and Integration Tests) | .. image:: https://travis-ci.org/TheFantasyClub/AlienVaultPyEx2.svg?branch=master :alt: Travis Support :target: https://travis-ci.org/TheFantasyClub/AlienVaultPyEx2                                                   |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Coveralls coverage support**                    | .. image:: https://coveralls.io/repos/github/TheFantasyClub/AlienVaultPyEx2/badge.svg?branch=master :alt: Coveralls coverage support :target: https://coveralls.io/github/TheFantasyClub/AlienVaultPyEx2?branch=master |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Documentation Status**                          | .. image:: https://readthedocs.org/projects/alienvaultpyex2/badge/?version=latest :alt: Documentation Status :target: https://alienvaultpyex2.readthedocs.io/en/latest/?badge=latest                                   |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----------
 
-
-
-
-.. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=alert_status
-        :alt: Coveralls coverage support
-        :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W
-
-.. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=code_smells
-        :alt: Coveralls coverage support
-        :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W
-
-.. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=sqale_index
-        :alt: Coveralls coverage support
-        :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W
-
-.. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=coverage
-        :alt: Coveralls coverage support
-        :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W
-
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **SonarCloud**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=alert_status :alt: Alert Status :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W .. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=code_smells :alt: Code Smells :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W .. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=sqale_index :alt: Technical Debt :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W .. image:: https://sonarcloud.io/api/project_badges/measure?project=AlienVaultPyEx2_W&metric=coverage :alt: Coverage :target: https://sonarcloud.io/dashboard?id=AlienVaultPyEx2_W                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 AlienVault's hiring exercise
