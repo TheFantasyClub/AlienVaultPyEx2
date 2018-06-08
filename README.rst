@@ -65,12 +65,13 @@ TODO Specific in `if __name__ == '__main__'`
 
 Input
 *****
-["owner1/repository1", "owner2/repository2"]
+```["owner1/repository1", "owner2/repository2"]```
 
 Restult
 *******
 
 ```
+
 {
   "issues": [
     {
