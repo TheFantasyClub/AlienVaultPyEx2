@@ -51,8 +51,8 @@ Features
 
 TODO GLOBAL
 *****************
-* [X] A valid checker is not yet implemented
 * [ ] TDD with sonarcloud to ensure effective conversion
+* [X] Insert this dictionary as element into a list.
 
 TODO Specific in `if __name__ == '__main__'`
 **********************************************
@@ -60,7 +60,7 @@ TODO Specific in `if __name__ == '__main__'`
 * [ ] prompt for proxy if needed
 * [ ] set a python's list pointing to Github's repos.
 * [ ] connect to Github
-* [ ] using PyGithub, extract the id, state, title, repository and created at with isoformat Z and create with those data, a dictionary. Insert this dictionary as element into a list.
+* [ ] using PyGithub, extract the id, state, title, repository and created at with isoformat Z and create with those data, a dictionary.
 * [ ] using the list preiously created, search trough all elements and create a dictionary with the keywords `day` and `ocurrences`
 
 Input
