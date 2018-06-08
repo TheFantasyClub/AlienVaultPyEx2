@@ -66,6 +66,7 @@ TODO Specific in `if __name__ == '__main__'`
 Input
 *****
 .. code-block::
+
   ["owner1/repository1", "owner2/repository2"]
 
 Restult
