@@ -330,8 +330,8 @@ class TestOcurrencesComposer(unittest.TestCase):
                           "top_day": {
                             "day": "2011-04-22",
                             "occurrences": {
-                              "owner1/repository1": 2,
-                              "owner2/repository2": 0
+                              "own1/repo1": 2,
+                              "own2/repo2": 0
                             }
                           }
                         })
