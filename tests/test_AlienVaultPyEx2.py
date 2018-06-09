@@ -230,5 +230,16 @@ class test_ocurrences_extracter(unittest.TestCase):
                                   '2011-04-22T18:24:32Z': 'own1/repo1',
                                   '2011-05-08T09:15:20Z': 'own2/repo2'})
 
+        """ Testing massive conversions """
+
+        for i in range(0, len(OcurrencesSplitted[0])):
+            OcurrencesSplitted[0][i] = DateDayConverter(OcurrencesSplitted[0][i])
+        assert(OcurrencesSplitted == [['2011-04-22',
+                                       '2011-04-22',
+                                       '2011-05-08'],
+                                      ['own1/repo1',
+                                       'own1/repo1',
+                                       'own2/repo2']])
+
     def tearDown(self):
         pass
