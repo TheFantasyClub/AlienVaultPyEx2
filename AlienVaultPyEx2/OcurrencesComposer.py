@@ -96,12 +96,18 @@ class OcurrencesComposer(object):
                 self.topreposdict[self.ocurrencessplitted[1][i]] += 1
 
     def CalculateTopDayReposCount(self):
-
         self.EmptyReposDict()
         self.IncreaseReposOcurrences()
 
     def CreateDictWithTopDay(self):
-        self.topdaydict = {"day": self.topday, "ocurrences": self.topreposdict}
+        self.topdaydict = {"day": self.topday, "occurrences": self.topreposdict}
+        self.dictocurrences["top_day"] = self.topdaydict
+
+    def Process(self):
+        self.CreateOcurrencesDict()
+        self.CalculateTopDay()
+        self.CalculateTopDayReposCount()
+        self.CreateDictWithTopDay()
 
     def OutputData(self):
         return self.dictocurrences
