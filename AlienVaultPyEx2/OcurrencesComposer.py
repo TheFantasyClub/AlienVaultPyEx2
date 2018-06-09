@@ -100,7 +100,8 @@ class OcurrencesComposer(object):
         self.IncreaseReposOcurrences()
 
     def CreateDictWithTopDay(self):
-        self.topdaydict = {"day": self.topday, "occurrences": self.topreposdict}
+        self.topdaydict = {"day": self.topday,
+                           "occurrences": self.topreposdict}
         self.dictocurrences["top_day"] = self.topdaydict
 
     def Process(self):

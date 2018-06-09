@@ -2,8 +2,6 @@
 import json
 from github import Github
 from AlienVaultPyEx2.OcurrencesComposer import OcurrencesComposer
-from AlienVaultPyEx2.DictIssuesComposer import DictIssuesComposer
-from AlienVaultPyEx2.IssueListComposer import IssueListComposer
 from AlienVaultPyEx2.DateRelatedFunctions import DateConverterPyGithub
 
 
@@ -30,29 +28,20 @@ def Exercise():
         g = Github(user_in, pass_in)
 
     issue_list = []
-    dict_issues = DictIssuesComposer()
+    dict_issues = {}
 
     for reponame in glist:
         print(reponame)
         for repo in g.get_repo(reponame).get_issues():
-
-            dict_issues = DictIssuesComposer(
-             repo.id, repo.state, repo.title,
-             reponame, DateConverterPyGithub(repo.created_at))
-
-            issue_list.append(dict_issues.GetDictIssues())
-            # print(dict_issues.GetDictIssues())
-            # if issue_list.GetIssueList() == []:
-            #     issue_list = IssueListComposer(dict_issues.GetDictIssues())
-            #     print("first time")
-            # else:
-            #     issue_list.append(dict_issues.GetDictIssues())
-            #     print("normal use")
-        print(issue_list)
+            dict_issues = {"id": repo.id,
+                           "state": repo.state,
+                           "title": repo.title,
+                           "repository": reponame,
+                           "created_at": DateConverterPyGithub(
+                                          repo.created_at)}
+            issue_list.append(dict_issues)
 
     occurrences = OcurrencesComposer(issue_list)
-
-    print(occurrences.OutputData())
 
     occurrences.Process()
 
@@ -63,6 +52,7 @@ def Exercise():
 
 
 if __name__ == '__main__':
+    """Some test repos"""
     glist = ["moewe-io/embed-google-fonts",
              "UW-Hydro/bmorph",
              "sjinks/qt_eventdispatcher_libevent",
