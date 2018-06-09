@@ -59,20 +59,49 @@ class OcurrencesComposer(object):
     def CreateOcurrencesDict(self):
         ExtractionOcurrencesList = list(DictionaryExtractorMultipleGen(
                                          ["created_at", "repository"],
-                                         self.AVTestValues))
-        OcurrencesSplitted = list(SplitAListGen(ExtractionOcurrencesList,
-                                                len(ExtractionOcurrencesList)
-                                                // 2))
+                                         self.dictocurrences))
+        self.ocurrencessplitted = list(
+         SplitAListGen(ExtractionOcurrencesList,
+                       len(ExtractionOcurrencesList)
+                       // 2))
 
-        for i in range(0, len(OcurrencesSplitted[0])):
-            OcurrencesSplitted[0][i] = DateDayConverter(
-             OcurrencesSplitted[0][i])
-        """
-        Uses OcurrencesSplitted[1] directly because we know the size
-        but can happen the size can be 0 or 1. This is not tested yet
-        """
-        self.ocurrencesdict = dict(zip(OcurrencesSplitted[0],
-                                       OcurrencesSplitted[1]))
+        for i in range(0, len(self.ocurrencessplitted[0])):
+            self.ocurrencessplitted[0][i] = DateDayConverter(
+             self.ocurrencessplitted[0][i])
+
+    def EmptyDatesDict(self):
+
+        self.datesdict = dict()
+        for x in self.ocurrencessplitted[0]:
+            self.datesdict[x] = 0
+
+    def CalculateTopDay(self):
+
+        self.EmptyDatesDict()
+
+        for x in self.ocurrencessplitted[0]:
+            self.datesdict[x] += 1
+
+        self.topday = max((value, key)
+                          for key, value in self.datesdict.items())[1]
+
+    def EmptyReposDict(self):
+        self.topreposdict = dict()
+        for x in self.ocurrencessplitted[1]:
+            self.topreposdict[x] = 0
+
+    def IncreaseReposOcurrences(self):
+        for i in range(0, len(self.ocurrencessplitted[0])):
+            if self.ocurrencessplitted[0][i] == self.topday:
+                self.topreposdict[self.ocurrencessplitted[1][i]] += 1
+
+    def CalculateTopDayReposCount(self):
+
+        self.EmptyReposDict()
+        self.IncreaseReposOcurrences()
+
+    def CreateDictWithTopDay(self):
+        self.topdaydict = {"day": self.topday, "ocurrences": self.topreposdict}
 
     def OutputData(self):
         return self.dictocurrences
