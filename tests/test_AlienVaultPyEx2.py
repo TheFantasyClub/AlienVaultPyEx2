@@ -186,7 +186,7 @@ class test_ocurrences_extracter(unittest.TestCase):
                                        ]
                              }
 
-    def test_extracter_list_ocurrences(self):
+    def test_ocurrences_functions(self):
         """ Testing search one key """
         ExtractionOcurrencesList = list(gen_dict_extract(
                                          "created_at",
