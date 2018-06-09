@@ -196,33 +196,33 @@ class test_ocurrences_extracter(unittest.TestCase):
                                             '2011-05-08T09:15:20Z'])
         """ Testing with single key """
         ExtractionOcurrencesList = list(DictionaryExtractorMultipleGen(
-                                         ["created_at"],
-                                         self.AVTestValues))
-        assert(ExtractionOcurrencesList == ['2011-04-22T13:33:48Z',
-                                            '2011-04-22T18:24:32Z',
-                                            '2011-05-08T09:15:20Z'])
-        """ Testing with multiple keys """
-        ExtractionOcurrencesList = list(DictionaryExtractorMultipleGen(
-                                         ["repository", "created_at"],
+                                         ["repository"],
                                          self.AVTestValues))
         assert(ExtractionOcurrencesList == ['own1/repo1',
                                             'own1/repo1',
-                                            'own2/repo2',
-                                            '2011-04-22T13:33:48Z',
+                                            'own2/repo2'])
+        """ Testing with multiple keys """
+        ExtractionOcurrencesList = list(DictionaryExtractorMultipleGen(
+                                         ["created_at", "repository"],
+                                         self.AVTestValues))
+        assert(ExtractionOcurrencesList == ['2011-04-22T13:33:48Z',
                                             '2011-04-22T18:24:32Z',
-                                            '2011-05-08T09:15:20Z'])
+                                            '2011-05-08T09:15:20Z',
+                                            'own1/repo1',
+                                            'own1/repo1',
+                                            'own2/repo2'])
         """ Testing split the ocurrence list """
         OcurrencesSplitted = list(SplitAListGen(ExtractionOcurrencesList,
                                                 len(ExtractionOcurrencesList)
                                                 // 2))
-        assert(OcurrencesSplitted == [['own1/repo1',
-                                       'own1/repo1',
-                                       'own2/repo2'],
-                                      ['2011-04-22T13:33:48Z',
+        assert(OcurrencesSplitted == [['2011-04-22T13:33:48Z',
                                        '2011-04-22T18:24:32Z',
-                                       '2011-05-08T09:15:20Z']])
-        OcurrencesDict = dict(zip(OcurrencesSplitted[1],
-                                  OcurrencesSplitted[0]))
+                                       '2011-05-08T09:15:20Z'],
+                                       ['own1/repo1',
+                                       'own1/repo1',
+                                       'own2/repo2']])
+        OcurrencesDict = dict(zip(OcurrencesSplitted[0],
+                                  OcurrencesSplitted[1]))
         assert(OcurrencesDict == {'2011-04-22T13:33:48Z': 'own1/repo1',
                                   '2011-04-22T18:24:32Z': 'own1/repo1',
                                   '2011-05-08T09:15:20Z': 'own2/repo2'})
