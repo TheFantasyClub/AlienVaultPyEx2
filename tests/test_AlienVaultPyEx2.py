@@ -15,6 +15,7 @@ import AlienVaultPyEx2
 from AlienVaultPyEx2.DictIssuesComposer import DictIssuesComposer
 from AlienVaultPyEx2.IssueListComposer import IssueListComposer
 
+
 class TestDictIssuesComposer(unittest.TestCase):
 
     def setUp(self):
@@ -29,14 +30,14 @@ class TestDictIssuesComposer(unittest.TestCase):
                                      self.repository, self.created_at)
         out_dump = json.dumps(test_in.GetDictIssues())
         assert(len(test_in.GetDictIssues()) == 5)
-        assert(len(out_dump) == 117)
         assert(out_dump == '{"id": 38, "state": "open",'
-                         + ' "title": "Found a bug",'
-                         + ' "repository": "own1/repo1",'
-                         + ' "created_at": "2011-04-22T13:33:48Z"}')
+                           + ' "title": "Found a bug",'
+                           + ' "repository": "own1/repo1",'
+                           + ' "created_at": "2011-04-22T13:33:48Z"}')
 
     def tearDown(self):
         pass
+
 
 class TestIssueListComposer(unittest.TestCase):
 
