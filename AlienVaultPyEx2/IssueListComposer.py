@@ -1,5 +1,5 @@
 class IssueListComposer(list):
-    """ Creates a dictionary with the elements inserted """
+    """ Creates a list with the elements inserted from a dictionary """
 
     def __init__(self, issue_dict=None):
         self.listissue = list()
