@@ -29,26 +29,28 @@ def Exercise():
     elif not uses_token and uses_user_pass:
         g = Github(user_in, pass_in)
 
-    issue_list = IssueListComposer()
+    issue_list = []
     dict_issues = DictIssuesComposer()
 
     for reponame in glist:
+        print(reponame)
         for repo in g.get_repo(reponame).get_issues():
 
             dict_issues = DictIssuesComposer(
              repo.id, repo.state, repo.title,
              reponame, DateConverterPyGithub(repo.created_at))
 
-            if len(issue_list.GetIssueList()) == 0:
-                issue_list = IssueListComposer(dict_issues.GetDictIssues())
-            else:
-                issue_list.append(dict_issues.GetDictIssues())
-            # print("id " + str(repo.id))
-            # print("state " + repo.state)
-            # print("title " + repo.title)
-            # print("repository " + reponame)
-            # print("created_at " + DateConverterPyGithub(repo.created_at))
-    occurrences = OcurrencesComposer(issue_list.GetIssueList())
+            issue_list.append(dict_issues.GetDictIssues())
+            # print(dict_issues.GetDictIssues())
+            # if issue_list.GetIssueList() == []:
+            #     issue_list = IssueListComposer(dict_issues.GetDictIssues())
+            #     print("first time")
+            # else:
+            #     issue_list.append(dict_issues.GetDictIssues())
+            #     print("normal use")
+        print(issue_list)
+
+    occurrences = OcurrencesComposer(issue_list)
 
     print(occurrences.OutputData())
 
