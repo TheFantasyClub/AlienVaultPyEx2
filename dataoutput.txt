@@ -1,0 +1,1 @@
+{"issues": [{"id": 329949960, "state": "open", "title": "Use unzip_file", "repository": "moewe-io/embed-google-fonts", "created_at": "2018-06-06T16:49:12Z"}], "top_day": {"day": "2018-06-06", "occurrences": {"moewe-io/embed-google-fonts": 1}}}
