@@ -194,6 +194,7 @@ class test_ocurrences_extracter(unittest.TestCase):
         assert(ExtractionOcurrencesList == ['2011-04-22T13:33:48Z',
                                             '2011-04-22T18:24:32Z',
                                             '2011-05-08T09:15:20Z'])
+
         """ Testing with single key """
         ExtractionOcurrencesList = list(DictionaryExtractorMultipleGen(
                                          ["repository"],
@@ -201,6 +202,7 @@ class test_ocurrences_extracter(unittest.TestCase):
         assert(ExtractionOcurrencesList == ['own1/repo1',
                                             'own1/repo1',
                                             'own2/repo2'])
+
         """ Testing with multiple keys """
         ExtractionOcurrencesList = list(DictionaryExtractorMultipleGen(
                                          ["created_at", "repository"],
@@ -211,14 +213,15 @@ class test_ocurrences_extracter(unittest.TestCase):
                                             'own1/repo1',
                                             'own1/repo1',
                                             'own2/repo2'])
-        """ Testing split the ocurrence list """
+
+        """ Testing split the ocurrence list and zip it into a dictionary """
         OcurrencesSplitted = list(SplitAListGen(ExtractionOcurrencesList,
                                                 len(ExtractionOcurrencesList)
                                                 // 2))
         assert(OcurrencesSplitted == [['2011-04-22T13:33:48Z',
                                        '2011-04-22T18:24:32Z',
                                        '2011-05-08T09:15:20Z'],
-                                       ['own1/repo1',
+                                      ['own1/repo1',
                                        'own1/repo1',
                                        'own2/repo2']])
         OcurrencesDict = dict(zip(OcurrencesSplitted[0],
