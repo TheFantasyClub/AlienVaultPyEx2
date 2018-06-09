@@ -18,7 +18,6 @@ with open(path.join(here, 'HISTORY.rst'), encoding='utf-8') as history_file:
 
 requirements = [
     # TODO: put package requirements here
-    'click',
     'pygithub',
 ]
 
@@ -38,7 +37,7 @@ setup(
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     entry_points={
         'console_scripts':[
-            'AlienVaultPyEx2=AlienVaultPyEx2.cli:cli',
+            'AlienVaultPyEx2=AlienVaultPyEx2.AlienVaultPyEx2:Exercise',
             ],
         },
     include_package_data=True,
@@ -49,6 +48,10 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
     test_suite='tests',
@@ -58,7 +61,3 @@ setup(
 # Add to the setup Classifiers if you want support with other Python Versions
 #        "Programming Language :: Python :: 2",
 #        'Programming Language :: Python :: 2.7',
-#        'Programming Language :: Python :: 3',
-#        'Programming Language :: Python :: 3.3',
-#        'Programming Language :: Python :: 3.4',
-#        'Programming Language :: Python :: 3.5',
