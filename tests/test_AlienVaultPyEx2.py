@@ -19,6 +19,7 @@ from AlienVaultPyEx2.DateRelatedFunctions import DateConverterPyGithub
 from AlienVaultPyEx2.OcurrencesComposer import DictionaryExtractorMultipleGen
 from AlienVaultPyEx2.OcurrencesComposer import gen_dict_extract
 from AlienVaultPyEx2.OcurrencesComposer import SplitAListGen
+from AlienVaultPyEx2.OcurrencesComposer import OcurrencesComposer
 
 
 class TestDictIssuesComposer(unittest.TestCase):
@@ -187,10 +188,11 @@ class test_ocurrences_extracter(unittest.TestCase):
                              }
 
     def test_ocurrences_functions(self):
-        """ Testing search one key """
+
         ExtractionOcurrencesList = list(gen_dict_extract(
                                          "created_at",
                                          self.AVTestValues))
+        """ Testing search one key """
         assert(ExtractionOcurrencesList == ['2011-04-22T13:33:48Z',
                                             '2011-04-22T18:24:32Z',
                                             '2011-05-08T09:15:20Z'])
@@ -233,13 +235,69 @@ class test_ocurrences_extracter(unittest.TestCase):
         """ Testing massive conversions """
 
         for i in range(0, len(OcurrencesSplitted[0])):
-            OcurrencesSplitted[0][i] = DateDayConverter(OcurrencesSplitted[0][i])
+            OcurrencesSplitted[0][i] = DateDayConverter(
+             OcurrencesSplitted[0][i])
         assert(OcurrencesSplitted == [['2011-04-22',
                                        '2011-04-22',
                                        '2011-05-08'],
                                       ['own1/repo1',
                                        'own1/repo1',
                                        'own2/repo2']])
+
+    def tearDown(self):
+        pass
+
+
+class TestOcurrencesComposer(unittest.TestCase):
+
+    def setUp(self):
+        self.issueList = [
+                           {
+                             "id": 38,
+                             "state": "open",
+                             "title": "Found a bug",
+                             "repository": "own1/repo1",
+                             "created_at": "2011-04-22T13:33:48Z"
+                            },
+                           {
+                             "id": 23,
+                             "state": "open",
+                             "title": "Found a bug 2",
+                             "repository": "own1/repo1",
+                             "created_at": "2011-04-22T18:24:32Z"
+                            },
+                           {
+                             "id": 24,
+                             "state": "closed",
+                             "title": "Feature request",
+                             "repository": "own2/repo2",
+                             "created_at": "2011-05-08T09:15:20Z"
+                            }
+                          ]
+
+    """ Construction without parameters """
+
+    def test_ocurrence_list_empty(self):
+        test_in = OcurrencesComposer()
+        assert(len(test_in.OutputData()) == 0)
+
+    """ Construction and appending more values """
+
+    def test_ocurrence_list(self):
+        test_in = OcurrencesComposer(self.issueList)
+        assert(len(test_in.OutputData()) == 1)
+        assert(len(test_in.OutputData()["issues"]) == 3)
+        test_in.CreateOcurrencesDict()
+        assert(test_in.ocurrencessplitted == [['2011-04-22',
+                                               '2011-04-22',
+                                               '2011-05-08'],
+                                              ['own1/repo1',
+                                               'own1/repo1',
+                                               'own2/repo2']])
+        test_in.CalculateTopDay()
+        assert(test_in.topday == '2011-04-22')
+        test_in.CalculateTopDayReposCount()
+        assert(test_in.topreposdict == {'own1/repo1': 2, 'own2/repo2': 0})
 
     def tearDown(self):
         pass
