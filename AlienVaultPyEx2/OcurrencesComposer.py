@@ -51,7 +51,7 @@ class OcurrencesComposer(object):
     def __init__(self, issue_list=None):
         self.dictocurrences = dict()
         if issue_list is not None:
-            self.dictocurrences = {issue_list}
+            self.dictocurrences = {"issues": issue_list}
 
     def OutputData(self):
         return self.dictocurrences
