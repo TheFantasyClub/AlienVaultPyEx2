@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 
+from AlienVaultPyEx2.DateRelatedFunctions import DateDayConverter
+
+
 def gen_dict_extract(key, var):
     """ https://stackoverflow.com/questions/9807634/find-all-occurrences-of-a-key-in-nested-python-dictionaries-and-lists """
     if hasattr(var, 'items'):
@@ -52,6 +55,24 @@ class OcurrencesComposer(object):
         self.dictocurrences = dict()
         if issue_list is not None:
             self.dictocurrences = {"issues": issue_list}
+
+    def CreateOcurrencesDict(self):
+        ExtractionOcurrencesList = list(DictionaryExtractorMultipleGen(
+                                         ["created_at", "repository"],
+                                         self.AVTestValues))
+        OcurrencesSplitted = list(SplitAListGen(ExtractionOcurrencesList,
+                                                len(ExtractionOcurrencesList)
+                                                // 2))
+
+        for i in range(0, len(OcurrencesSplitted[0])):
+            OcurrencesSplitted[0][i] = DateDayConverter(
+             OcurrencesSplitted[0][i])
+        """
+        Uses OcurrencesSplitted[1] directly because we know the size
+        but can happen the size can be 0 or 1. This is not tested yet
+        """
+        self.ocurrencesdict = dict(zip(OcurrencesSplitted[0],
+                                       OcurrencesSplitted[1]))
 
     def OutputData(self):
         return self.dictocurrences
