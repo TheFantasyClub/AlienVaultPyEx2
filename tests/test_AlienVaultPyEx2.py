@@ -17,6 +17,8 @@ from AlienVaultPyEx2.IssueListComposer import IssueListComposer
 from AlienVaultPyEx2.DateRelatedFunctions import DateDayConverter
 from AlienVaultPyEx2.DateRelatedFunctions import DateConverterPyGithub
 from AlienVaultPyEx2.OcurrencesComposer import DictionaryExtractorMultipleGen
+from AlienVaultPyEx2.OcurrencesComposer import gen_dict_extract
+from AlienVaultPyEx2.OcurrencesComposer import SplitAListGen
 
 
 class TestDictIssuesComposer(unittest.TestCase):
@@ -185,16 +187,45 @@ class test_ocurrences_extracter(unittest.TestCase):
                              }
 
     def test_extracter_list_ocurrences(self):
-        ExtractionOcurrencesList = list(DictionaryExtractorMultipleGen(
-                                         {"repository", "created_at"},
+        """ Testing search one key """
+        ExtractionOcurrencesList = list(gen_dict_extract(
+                                         "created_at",
                                          self.AVTestValues))
-        print(ExtractionOcurrencesList)
+        assert(ExtractionOcurrencesList == ['2011-04-22T13:33:48Z',
+                                            '2011-04-22T18:24:32Z',
+                                            '2011-05-08T09:15:20Z'])
+        """ Testing with single key """
+        ExtractionOcurrencesList = list(DictionaryExtractorMultipleGen(
+                                         ["created_at"],
+                                         self.AVTestValues))
+        assert(ExtractionOcurrencesList == ['2011-04-22T13:33:48Z',
+                                            '2011-04-22T18:24:32Z',
+                                            '2011-05-08T09:15:20Z'])
+        """ Testing with multiple keys """
+        ExtractionOcurrencesList = list(DictionaryExtractorMultipleGen(
+                                         ["repository", "created_at"],
+                                         self.AVTestValues))
         assert(ExtractionOcurrencesList == ['own1/repo1',
                                             'own1/repo1',
                                             'own2/repo2',
                                             '2011-04-22T13:33:48Z',
                                             '2011-04-22T18:24:32Z',
                                             '2011-05-08T09:15:20Z'])
+        """ Testing split the ocurrence list """
+        OcurrencesSplitted = list(SplitAListGen(ExtractionOcurrencesList,
+                                                len(ExtractionOcurrencesList)
+                                                // 2))
+        assert(OcurrencesSplitted == [['own1/repo1',
+                                       'own1/repo1',
+                                       'own2/repo2'],
+                                      ['2011-04-22T13:33:48Z',
+                                       '2011-04-22T18:24:32Z',
+                                       '2011-05-08T09:15:20Z']])
+        OcurrencesDict = dict(zip(OcurrencesSplitted[1],
+                                  OcurrencesSplitted[0]))
+        assert(OcurrencesDict == {'2011-04-22T13:33:48Z': 'own1/repo1',
+                                  '2011-04-22T18:24:32Z': 'own1/repo1',
+                                  '2011-05-08T09:15:20Z': 'own2/repo2'})
 
     def tearDown(self):
         pass
