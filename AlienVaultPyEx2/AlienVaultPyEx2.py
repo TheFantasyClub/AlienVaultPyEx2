@@ -2,9 +2,9 @@
 from github import Github
 
 
-def cli():
+def Exercise():
     print("Hello, World!")
 
 
 if __name__ == '__main__':
-    cli()
+    Exercise()
