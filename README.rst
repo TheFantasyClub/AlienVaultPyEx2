@@ -53,18 +53,18 @@ TODO GLOBAL
 *****************
 * ✔️ TDD with Sonarcloud and Coveralls to ensure effective conversion.
 * ✔️ Insert the issue dictionary as element into a list.
-* ❌ Create a list to save all issues dates.
-* ❌ Convert all issues dates in isoformat Z or `datetime` into day date with format YYYY-MM-DD from the dates list.
-* ❌ .
+* ✔️ Create a list to save all issues dates.
+* ✔️ Convert all issues dates in isoformat Z or `datetime` into day date with format YYYY-MM-DD from the dates list.
+* ❌ Extract all the repository and created at into two lists
+* ❌ using the list preiously created, search trough all elements and create a dictionary with the keywords `day` and `ocurrences`
 
 TODO Specific in `if __name__ == '__main__'`
 **********************************************
-* ❌ prompt for user/pass
+* ❌ prompt for user/pass or token
 * ❌ prompt for proxy if needed
 * ❌ set a python's list pointing to Github's repos.
 * ❌ connect to Github
 * ❌ using PyGithub, extract the id, state, title, repository and created at with isoformat Z and create with those data, a dictionary.
-* ❌ using the list preiously created, search trough all elements and create a dictionary with the keywords `day` and `ocurrences`
 
 Input
 *****
