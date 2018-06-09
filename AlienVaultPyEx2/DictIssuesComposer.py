@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 class DictIssuesComposer(object):
     """ Creates a dictionary with the elements inserted
         The elements are not being type-tested. Use with caution

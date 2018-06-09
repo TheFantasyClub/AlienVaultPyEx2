@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 class OcurrencesComposer(object):
     """
     Creates a dictionary with only one element:
@@ -13,20 +16,8 @@ class OcurrencesComposer(object):
         return self.dictocurrences
 
 
-def find(key, value):
-    for k, v in value.items():
-        if k == key:
-            yield v
-        elif isinstance(v, dict):
-            for result in find(key, v):
-                yield result
-        elif isinstance(v, list):
-            for d in v:
-                for result in find(key, d):
-                    yield result
-
-
 def gen_dict_extract(key, var):
+    """ https://stackoverflow.com/questions/9807634/find-all-occurrences-of-a-key-in-nested-python-dictionaries-and-lists """
     if hasattr(var, 'items'):
         for k, v in var.items():
             if k == key:
@@ -38,6 +29,32 @@ def gen_dict_extract(key, var):
                 for d in v:
                     for result in gen_dict_extract(key, d):
                         yield result
+
+
+def DictionaryExtractorMultipleGen(keys, var):
+    """
+    Variant of gen_dict_extract with multiple keys into a datatype contains
+    items as attribute
+    """
+    for key in keys:
+        if hasattr(var, 'items'):
+            for k, v in var.items():
+                if k == key:
+                    yield {key: v}
+                if isinstance(v, dict):
+                    for result in gen_dict_extract(key, v):
+                        yield result
+                elif isinstance(v, list):
+                    for d in v:
+                        for result in gen_dict_extract(key, d):
+                            yield result
+
+
+def SplitAListGen(l, n):
+    """Yield successive n-sized chunks from l."""
+    """https://stackoverflow.com/questions/312443/how-do-you-split-a-list-into-evenly-sized-chunks"""
+    for i in range(0, len(l), n):
+        yield l[i:i + n]
 
 
 if __name__ == '__main__':
@@ -110,12 +127,19 @@ if __name__ == '__main__':
                                 }
                               ]
                     }
-    list(find("id", d))
 
     list(gen_dict_extract("id", d))
 
     list(gen_dict_extract("datefmt", vt))
+    tuple(DictionaryExtractorMultipleGen({"handlers", "level"}, vt))
 
     [x for x in gen_dict_extract('id', d)]
 
     list(gen_dict_extract("created_at", AVTestValues))
+
+    list(DictionaryExtractorMultipleGen(
+                    {"created_at", "repository"}, AVTestValues))
+    AvValuesList = list(DictionaryExtractorMultipleGen(
+                        {"created_at", "repository"}, AVTestValues))
+    AvValuesLists = list(SplitAListGen(AvValuesList, len(AvValuesList)//2))
+    dict(zip(AvValuesLists[1], AvValuesLists[0]))

@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 class IssueListComposer(list):
     """ Creates a list with the elements inserted from a dictionary """
 

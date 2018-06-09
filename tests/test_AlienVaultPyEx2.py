@@ -15,7 +15,8 @@ import datetime
 from AlienVaultPyEx2.DictIssuesComposer import DictIssuesComposer
 from AlienVaultPyEx2.IssueListComposer import IssueListComposer
 from AlienVaultPyEx2.DateRelatedFunctions import DateDayConverter
-from AlienVaultPyEx2.DateRelatedFunctions import PyGithubDateConverter
+from AlienVaultPyEx2.DateRelatedFunctions import DateConverterPyGithub
+from AlienVaultPyEx2.OcurrencesComposer import DictionaryExtractorMultipleGen
 
 
 class TestDictIssuesComposer(unittest.TestCase):
@@ -149,8 +150,51 @@ class test_conversion_date_formats(unittest.TestCase):
 
     def test_date_conversion_from_pygithub_format(self):
         dtp = datetime.datetime(2018, 6, 6, 16, 49, 12)
-        assert(PyGithubDateConverter(dtp) == '2018-06-06T16:49:12Z')
+        assert(DateConverterPyGithub(dtp) == '2018-06-06T16:49:12Z')
+
+    def tearDown(self):
         pass
+
+
+class test_ocurrences_extracter(unittest.TestCase):
+
+    def setUp(self):
+        self.AVTestValues = {"issues": [
+                                        {
+                                          "id": 38,
+                                          "state": "open",
+                                          "title": "Found a bug",
+                                          "repository": "own1/repo1",
+                                          "created_at": "2011-04-22T13:33:48Z"
+                                         },
+                                        {
+                                          "id": 23,
+                                          "state": "open",
+                                          "title": "Found a bug 2",
+                                          "repository": "own1/repo1",
+                                          "created_at": "2011-04-22T18:24:32Z"
+                                         },
+                                        {
+                                          "id": 24,
+                                          "state": "closed",
+                                          "title": "Feature request",
+                                          "repository": "own2/repo2",
+                                          "created_at": "2011-05-08T09:15:20Z"
+                                         }
+                                       ]
+                             }
+
+    def test_extracter_list_ocurrences(self):
+        ExtractionOcurrencesList = list(DictionaryExtractorMultipleGen(
+                                         {"repository", "created_at"},
+                                         self.AVTestValues))
+        print(ExtractionOcurrencesList)
+        assert(ExtractionOcurrencesList == ['own1/repo1',
+                                            'own1/repo1',
+                                            'own2/repo2',
+                                            '2011-04-22T13:33:48Z',
+                                            '2011-04-22T18:24:32Z',
+                                            '2011-05-08T09:15:20Z'])
 
     def tearDown(self):
         pass

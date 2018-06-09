@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """ File with some date manipulating functions """
 from datetime import datetime
 
@@ -18,5 +20,8 @@ The import data type is datetime.datetime
 """
 
 
-def PyGithubDateConverter(PyGithubDateTime):
-    return PyGithubDateTime.strftime("%Y-%m-%dT%H:%M:%SZ")
+def DateConverterPyGithub(DateTimeFromPyGithub):
+    return DateTimeFromPyGithub.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+""" """
